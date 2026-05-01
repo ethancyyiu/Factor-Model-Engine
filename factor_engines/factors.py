@@ -11,4 +11,12 @@ def volatility_factor(prices, window=21):
     vol = returns.rolling(window).std()
     return vol
 
+def reversal_factor(prices):
+    rev = -prices.pct_change(5)
+    return rev
+
+def sma_distance_factor(prices, window = 20):
+    sma = prices.rolling(window).mean()
+    dist = prices / sma - 1
+    return dist
 
