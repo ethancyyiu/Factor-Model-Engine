@@ -3,7 +3,7 @@ import numpy as np
 from factors import zscore
 
 def rank_factor(factors):
-    return factor.rank(axis = 1, method = "first")
+    return factors.rank(axis = 1, method = "first")
 
 def long_short_weights(ranks, long_pct=0.2, short_pct=0.2):
     n_stocks = ranks.shape[1]
@@ -31,3 +31,5 @@ def zscore_weights(factors):
     z = zscore(factors)
     z = z.clip(-3, 3)
     return normalize(z)
+
+
