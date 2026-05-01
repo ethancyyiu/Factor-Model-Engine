@@ -29,8 +29,13 @@ def compute_all(prices):
     }
     return factors
 
-
 def zscore_cross_sectional(df):
-    return (df - df.mean(axis=1).values.reshape(-1,1)) / df.std(axis=1).values.reshape(-1,1)
+    mean = df.mean(axis=1)
+    std = df.std(axis=1)
+    return (df.sub(mean, axis=0)).div(std, axis=0)
 
 
+def daily_score(factors):
+    score = [zscore(f) for f in factors.values()]
+    combined = sum(score) / len(score)
+    return combined
