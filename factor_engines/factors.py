@@ -20,3 +20,15 @@ def sma_distance_factor(prices, window = 20):
     dist = prices / sma - 1
     return dist
 
+def compute_all(prices):
+    factors = {
+        "momentum" = momentum_factor(prices)
+        "volatility" = volatility_factor(prices)
+        "reversal" = reversal_factor(prices)
+        "sma_distance" = sma_distance_factor(prices)
+    }
+    return factors
+
+
+
+
