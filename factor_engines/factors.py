@@ -30,5 +30,7 @@ def compute_all(prices):
     return factors
 
 
+def zscore_cross_sectional(df):
+    return (df - df.mean(axis=1).values.reshape(-1,1)) / df.std(axis=1).values.reshape(-1,1)
 
 
