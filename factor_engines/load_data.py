@@ -9,6 +9,7 @@ def get_price_data(tickers, start, end):
 
     return data
 
-
+def compute_returns(price_df):
+    return price_df.pct_change().dropna()
 
 
