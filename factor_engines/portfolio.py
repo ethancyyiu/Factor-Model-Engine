@@ -19,5 +19,10 @@ def normalize(weights):
     abs_sum = weights.abs().sum(axis=1)
     abs_sum[abs_sum == 0] = np.nan
     normed = weights.div(abs_sum, axis=0)
+    return normed.fillna(0.0)
 
-    
+def portfolio_returns(weights, returns):
+    returns = returns.reindex_like(weights)
+    port = (weights * returns).sum(axis=1)
+    return port
+
