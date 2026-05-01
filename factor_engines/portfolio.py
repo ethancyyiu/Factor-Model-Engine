@@ -14,4 +14,10 @@ def long_short_weights(ranks, long_pct=0.2, short_pct=0.2):
     weights[ranks <= short_cutoff] = -1.0
 
     return weights
+
+def normalize(weights):
+    abs_sum = weights.abs().sum(axis=1)
+    abs_sum[abs_sum == 0] = np.nan
+    normed = weights.div(abs_sum, axis=0)
+
     
