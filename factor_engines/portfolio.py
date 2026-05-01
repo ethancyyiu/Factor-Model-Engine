@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from factors import zscore
 
 def rank_factor(factors):
     return factor.rank(axis = 1, method = "first")
@@ -26,3 +27,7 @@ def portfolio_returns(weights, returns):
     port = (weights * returns).sum(axis=1)
     return port
 
+def zscore_weights(factors):
+    z = zscore(factors)
+    z = z.clip(-3, 3)
+    return normalize(z)
