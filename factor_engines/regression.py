@@ -14,3 +14,9 @@ def run_ols(y, X, add_constant=True):
     results = model.fit()
 
     return results
+
+def annualize_alpha(alpha_daily, periods_per_year=252):
+    return alpha_daily * periods_per_year
+
+def annualize_vol(vol_daily, periods_per_year=252):
+    return vol_daily * np.sqrt(periods_per_year)
