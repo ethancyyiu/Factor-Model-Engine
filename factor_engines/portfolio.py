@@ -49,5 +49,17 @@ def build_long_short_portfolio(factor_df, returns, long_pct=0.2, short_pct=0.2):
     port_ret = portfolio_returns(weights, returns)
     return weights, port_ret
 
+def build_zscore_portfolio_from_factor(factor, returns):
+    weights = zscore_weights(factor)
+    port_ret = portfolio_returns(weights, returns)
+    return weights, port_ret
+
+def build_composite_portfolio(factors_dict, returns):
+    composite = composite_factor(factors_dict)
+    weights = zscore_weights(composite)
+    port_ret = portfolio_returns(weights, returns)
+    return weights, port_ret
+
+
 
 
