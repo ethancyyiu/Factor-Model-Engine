@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from factors import zscore
+from factor_engines.factors import zscore
 
 def rank_factor(factors):
     return factors.rank(axis = 1, method = "first")
