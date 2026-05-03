@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from load_data import compute_returns
+from factor_engines.load_data import compute_returns
 
 def momentum_factor(prices):
     momentum = prices.pct_change(252) - prices.pct_change(21)
