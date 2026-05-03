@@ -39,3 +39,5 @@ def daily_score(factors):
     score = [zscore(f) for f in factors.values()]
     combined = sum(score) / len(score)
     return combined
+
+

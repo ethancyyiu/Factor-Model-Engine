@@ -32,6 +32,22 @@ def zscore_weights(factors):
     z = z.clip(-3, 3)
     return normalize(z)
 
+def zscore_all_factors(factors_dict):
+    return {name: zscore(df) for name, df in factors_dict.items()}
+
+def composite_factor(factors_dict):
+    z_factors = zscore_all_factors(factors_dict)
+    z_list = list(z_factors.values())
+    combined = sum(z_list) / len(z_list)
+    return combined
+
+
+def build_long_short_portfolio(factor_df, returns, long_pct=0.2, short_pct=0.2):
+    ranks = rank_factor(factor_df)
+    raw_weights = long_short_weights(ranks, long_pct, short_pct)
+    weights = normalize(raw_weights)
+    port_ret = portfolio_returns(weights, returns)
+    return weights, port_ret
 
 
 
