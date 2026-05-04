@@ -23,3 +23,24 @@ def annualize_vol(vol_daily, periods_per_year=252):
 
 def summerize_regression(y, x, date = 252):
     result = run_ols(y, x)
+    parameter = result.params
+    tstats = result.tvalues
+    r2 = result.rsquared
+
+    daily_alpha = parameter.iloc[0]
+    annualized = annualize_alpha(daily_alpha, date)
+
+    summary = {
+        "alpha_daily": daily_alpha,
+        "alpha_annual": annualized,
+        "alpha_tstat": tstats.iloc[0],
+        "r2": r2
+    }
+
+    for name, value in parameter.iloc[:1, ].items():
+        summary[f"beta_{name}"] = value
+
+    for name, value in tstats.iloc[:1, ].items():
+        summary[f"beta_{name}_tstats"] = value
+
+
