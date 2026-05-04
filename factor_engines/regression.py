@@ -44,3 +44,4 @@ def summerize_regression(y, x, date = 252):
         summary[f"beta_{name}_tstats"] = value
 
 
+    return summary, result
