@@ -8,7 +8,7 @@ This project started as “I wonder how factor investing actually works?” and 
 
 ---
 
-## 🚀 What This Project Is
+## What This Project Is
 
 This repo is a **mini quant research platform** I built to understand how real factor models work under the hood. It includes:
 
@@ -22,7 +22,7 @@ Everything is coded by me — a first‑year student — but structured like a r
 
 ---
 
-## 🧠 Why This Project Matters
+## Why This Project Matters
 
 Most student projects stop at “plot some prices.”  
 I wanted to go deeper and actually understand:
@@ -39,7 +39,7 @@ This version proves I understand the *process*, not just the data.
 
 ---
 
-## 📊 Factors Implemented (Price‑Only Version)
+## Factors Implemented (Price‑Only Version)
 
 I implemented four classic price‑based factors:
 
@@ -61,7 +61,7 @@ I also built a **composite factor** by combining all z‑scored signals.
 
 ---
 
-## 📈 Portfolio Construction
+## Portfolio Construction
 
 I implemented three portfolio styles:
 
@@ -82,7 +82,7 @@ I implemented three portfolio styles:
 
 ---
 
-## 🔍 Backtesting
+## Backtesting
 
 I built a full backtest pipeline:
 
@@ -96,7 +96,7 @@ This is where the strategy becomes real — not just math.
 
 ---
 
-## 📉 Regression Analysis (Alpha, Beta, R²)
+## Regression Analysis (Alpha, Beta, R²)
 
 To understand what the strategy is actually doing, I ran OLS regressions of portfolio returns vs SPY:
 
@@ -115,27 +115,31 @@ This is the part that made the project feel like real quant research.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-factor_engines/
-    load_data.py
-    factors.py
-    portfolio.py
-    regression.py
-    init.py
+factor_engines/  
+│
+├── __init__.py             
+├── load_data.py            
+├── factors.py              
+├── portfolio.py            
+└── regression.py           
 
-notebooks/
-    data_explore.ipynb
-    factor_construction.ipynb
-    portfolio_backtest.ipynb
-    regressions.ipynb
 
-requirements.txt
-README.md   
+notebooks/  
+│
+├── data_explore.ipynb          
+├── factor_construction.ipynb   
+├── portfolio_backtest.ipynb    
+└── regressions.ipynb           
+
+.gitignore        
+README.md         
+requirements.txt  
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Python  
 - pandas  
@@ -148,7 +152,7 @@ Everything else is handwritten.
 
 ---
 
-## 🎯 Why I Built This (as a First‑Year Student)
+## Why I Built This (as a First‑Year Student)
 
 I wanted to:
 
@@ -162,7 +166,7 @@ This project taught me more than any class so far.
 
 ---
 
-## 📌 Future Plans
+## Future Plans
 
 - Add risk models  
 - Add transaction costs  
@@ -171,7 +175,7 @@ This project taught me more than any class so far.
 
 ---
 
-## 🙌 Final Thoughts
+## Final Thoughts
 
 I started this project knowing almost nothing about quant finance.  
 Now I understand how factors are built, how portfolios are constructed, and how to evaluate a strategy using real metrics like alpha and beta.
