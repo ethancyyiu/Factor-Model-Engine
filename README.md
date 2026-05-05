@@ -22,7 +22,7 @@ Everything is coded by me — a first‑year student — but structured like a r
 
 ---
 
-## 🧠 Why This Project Matters (even without fundamentals)
+## 🧠 Why This Project Matters
 
 Most student projects stop at “plot some prices.”  
 I wanted to go deeper and actually understand:
