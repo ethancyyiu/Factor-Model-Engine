@@ -117,6 +117,21 @@ This is the part that made the project feel like real quant research.
 
 ## 📁 Project Structure
 
+factor_engines/
+    load_data.py
+    factors.py
+    portfolio.py
+    regression.py
+    init.py
+
+notebooks/
+    data_explore.ipynb
+    factor_construction.ipynb
+    portfolio_backtest.ipynb
+    regressions.ipynb
+
+requirements.txt
+README.md   
 
 ---
 
