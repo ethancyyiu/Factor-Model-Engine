@@ -23,8 +23,16 @@ def normalize(weights):
     return normed.fillna(0.0)
 
 def portfolio_returns(weights, returns):
-    returns = returns.reindex_like(weights)
+    # Flatten returns columns
+    returns = returns.copy()
+    returns.columns = returns.columns.get_level_values(-1)
+
+    # Align index only
+    returns = returns.reindex(weights.index)
+
+    # Multiply and sum across tickers
     port = (weights * returns).sum(axis=1)
+
     return port
 
 def zscore_weights(factors):
@@ -36,10 +44,29 @@ def zscore_all_factors(factors_dict):
     return {name: zscore(df) for name, df in factors_dict.items()}
 
 def composite_factor(factors_dict):
-    z_factors = zscore_all_factors(factors_dict)
-    z_list = list(z_factors.values())
-    combined = sum(z_list) / len(z_list)
+    # z-score each factor
+    z_factors = {name: zscore(df) for name, df in factors_dict.items()}
+
+    # Align all factors to the same index and columns
+    common_index = None
+    common_cols = None
+
+    for df in z_factors.values():
+        if common_index is None:
+            common_index = df.index
+            common_cols = df.columns
+        else:
+            common_index = common_index.intersection(df.index)
+            common_cols = common_cols.intersection(df.columns)
+
+    # Reindex all factors to the common index/columns
+    aligned = {name: df.loc[common_index, common_cols] for name, df in z_factors.items()}
+
+    # Combine into a DataFrame
+    combined = sum(aligned.values()) / len(aligned)
+
     return combined
+
 
 
 def build_long_short_portfolio(factor_df, returns, long_pct=0.2, short_pct=0.2):
@@ -56,9 +83,13 @@ def build_zscore_portfolio_from_factor(factor, returns):
 
 def build_composite_portfolio(factors_dict, returns):
     composite = composite_factor(factors_dict)
+    composite = composite.dropna()
+    aligned_returns = returns.reindex(composite.index)
     weights = zscore_weights(composite)
-    port_ret = portfolio_returns(weights, returns)
+    port_ret = portfolio_returns(weights, aligned_returns)
+
     return weights, port_ret
+
 
 
 
