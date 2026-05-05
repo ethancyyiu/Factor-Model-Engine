@@ -118,7 +118,6 @@ This is the part that made the project feel like real quant research.
 ## Project Structure
 
 factor_engines/  
-│
 ├── __init__.py             
 ├── load_data.py            
 ├── factors.py              
@@ -127,7 +126,6 @@ factor_engines/
 
 
 notebooks/  
-│
 ├── data_explore.ipynb          
 ├── factor_construction.ipynb   
 ├── portfolio_backtest.ipynb    
