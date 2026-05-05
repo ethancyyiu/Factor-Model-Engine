@@ -117,3 +117,52 @@ This is the part that made the project feel like real quant research.
 
 ## 📁 Project Structure
 
+
+---
+
+## 🛠 Tech Stack
+
+- Python  
+- pandas  
+- numpy  
+- matplotlib  
+- statsmodels  
+- yfinance  
+
+Everything else is handwritten.
+
+---
+
+## 🎯 Why I Built This (as a First‑Year Student)
+
+I wanted to:
+
+- understand quant finance beyond surface level  
+- build something I can show in interviews  
+- learn how real factor engines work  
+- get better at Python and data analysis  
+- challenge myself with something way above “first‑year level”  
+
+This project taught me more than any class so far.
+
+---
+
+## 📌 Future Plans
+
+- Add risk models  
+- Add transaction costs  
+- Add optimization (risk parity, Markowitz)  
+- Add rolling factor exposures  
+
+---
+
+## 🙌 Final Thoughts
+
+I started this project knowing almost nothing about quant finance.  
+Now I understand how factors are built, how portfolios are constructed, and how to evaluate a strategy using real metrics like alpha and beta.
+
+If you’re another student trying to get into quant, I hope this repo helps you the way building it helped me.
+
+Thanks for checking it out :)
+
+
