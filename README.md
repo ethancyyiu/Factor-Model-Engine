@@ -2,7 +2,7 @@
 
 # Factor Model Engine — Built From Scratch (by a First‑Year Student)
 
-Hi! I’m Ethan — I’m a first‑year student who got obsessed with quant finance and decided to build a full factor‑model engine completely from scratch. From raw prices → signals → portfolios → performance → regressions.
+Hi! I’m Ethan. I’m a first‑year student who got obsessed with quant finance and decided to build a full factor‑model engine completely from scratch. From raw prices → signals → portfolios → performance → regressions.
 
 This project started as “I wonder how factor investing actually works?” and turned into a full research pipeline that I’m genuinely proud of.
 
@@ -18,7 +18,7 @@ This repo is a **mini quant research platform** I built to understand how real f
 - A **backtesting layer** (cumulative returns, Sharpe, comparisons)
 - A **regression layer** (alpha, beta, t‑stats, R²)
 
-Everything is coded by me — a first‑year student — but structured like a real quant research workflow.
+Everything is coded by me, a first‑year student, but structured like a real quant research workflow.
 
 ---
 
@@ -92,7 +92,7 @@ I built a full backtest pipeline:
 - strategy comparisons  
 - summary tables  
 
-This is where the strategy becomes real — not just math.
+This is where the strategy becomes real, and not just math.
 
 ---
 
